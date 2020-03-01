@@ -33,7 +33,7 @@ Examples will be prepared for specific satellite imagery.
 ### Test
 Installation for test environment
 ```bash
-git clone && srem
+git clone https://github.com/oyam/srem.git && cd srem
 pip install -e .\[test\]
 ```
 
