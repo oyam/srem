@@ -25,8 +25,7 @@ surface_reflectance = srem(
 )
 
 assert isinstance(surface_reflectance, np.ndarray)
-assert surface_reflectance.shape == toa_reflectance
-
+assert surface_reflectance.shape == toa_reflectance.shape
 ```
 
 Examples will be prepared for specific satellite imagery.
