@@ -1,0 +1,3 @@
+numpy>=1.7
+rasterio==1.1.2
+git+https://github.com/oyam/srem

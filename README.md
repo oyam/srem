@@ -6,7 +6,7 @@ SREM can be used for estimating surface reflectance of satellite imagery instead
 
 ### Installation
 Python >= 3.6 is required.
-```bash
+```sh
 pip install git+https://github.com/oyam/srem
 ```
 
@@ -32,23 +32,23 @@ Examples will be prepared for specific satellite imagery.
 
 ### Test
 Installation for test environment
-```bash
+```sh
 git clone https://github.com/oyam/srem.git && cd srem
 pip install -e .\[test\]
 ```
 
 Unit test
-```bash
-pytest
+```sh
+pytest tests
 ```
 
 Lint
-```bash
+```sh
 flake8 --config=.flake8
 ```
 
 Type check
-```bash
+```sh
 mypy --config-file mypy.ini ./srem/*.py
 ```
 
