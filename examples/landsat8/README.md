@@ -13,7 +13,14 @@ docker build -t example-landsat8 .
 
 ## Usage
 ```sh
-docker run --rm -it -v `pwd`:/workspace example-landsat8 python3 src/main.py --input_raster_files <path/to/input_raster_files> --metadata_file <path/to/metadata_file> --angle_file <path/to/angle_file> --output_raster_dir <path/to/output_raster_dir>
+docker run \
+    --rm -it \
+    -v `pwd`:/workspace \
+    example-landsat8 python3 src/main.py \
+        --input_raster_files <path/to/input_raster_files> \
+        --metadata_file <path/to/metadata_file> \
+        --angle_file <path/to/angle_file> \
+        --output_raster_dir <path/to/output_raster_dir>
 ```
 
 Help
@@ -37,7 +44,14 @@ optional arguments:
 
 Example of usage
 ```sh
-docker run --rm -it -v `pwd`:/workspace example-landsat8 python3 src/main.py -i data/*B[1-9].TIF -m data/LC08_L1TP_013032_20200222_20200225_01_T1_MTL.json -a data/LC08_L1TP_013032_20200222_20200225_01_T1_ANG.txt -o output
+docker run \
+    --rm -it \
+    -v `pwd`:/workspace \
+    example-landsat8 python3 src/main.py \
+        -i data/*B[1-9].TIF \
+        -m data/LC08_L1TP_013032_20200222_20200225_01_T1_MTL.json \
+        -a data/LC08_L1TP_013032_20200222_20200225_01_T1_ANG.txt \
+        -o output
 ```
 
 ### Lint

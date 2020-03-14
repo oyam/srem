@@ -28,7 +28,9 @@ assert isinstance(surface_reflectance, np.ndarray)
 assert surface_reflectance.shape == toa_reflectance.shape
 ```
 
-Examples will be prepared for specific satellite imagery.
+For detailed usage, please refer to examples of Landsat-8 and Sentinel-2.
+- [example/landsat8](https://github.com/oyam/srem/tree/master/examples/landsat8)
+- [example/sentinel2](https://github.com/oyam/srem/tree/master/examples/sentinel2)
 
 ### Test
 Installation for test environment
