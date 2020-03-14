@@ -1,0 +1,5 @@
+autopep8
+awscli
+flake8
+mypy
+pytest==5.3.2
