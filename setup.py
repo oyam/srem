@@ -10,7 +10,7 @@ def read_requirements(dev=False):
 
 setuptools.setup(
     name="srem",
-    version="0.1.0",
+    version="0.1.1",
     description="A Simplified and Robust Surface Reflectance Estimation Method",
     packages=setuptools.find_packages(),
     install_requires=read_requirements(),

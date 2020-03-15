@@ -9,7 +9,29 @@ def srem(toa_reflectance: np.ndarray,
          solar_zenith_angle_deg: Union[float, np.ndarray],
          sensor_azimuth_angle_deg: Union[float, np.ndarray],
          sensor_zenith_angle_deg: Union[float, np.ndarray]) -> np.ndarray:
-    """Calculate surface reflectance
+    """Calculates surface reflectance
+
+    See: https://www.mdpi.com/2072-4292/11/11/1344
+
+    Args:
+        toa_reflectance (numpy.ndarray): Top of atmosphere reflectance.
+            Expected shape == (height, width)
+        wavelength (float): Wavelength of toa_reflectance in micrometer.
+        solar_azimuth_angle_deg (float or numpy.ndarray):
+            Solar azimuth angle. Expected unit is degree. Height and width have
+            to be same as those of toa_reflectance when using numpy.ndarray.
+        solar_zenith_angle_deg (float or numpy.ndarray):
+            Solar zenith angle. Expected unit is degree. Height and width have
+            to be same as those of toa_reflectance when using numpy.ndarray.
+        sensor_azimuth_angle_deg (float or numpy.ndarray):
+            Sensor azimuth angle. Expected unit is degree. Height and width have
+            to be same as those of toa_reflectance when using numpy.ndarray.
+        sensor_zenith_angle_deg (float or numpy.ndarray):
+            Sensor zenith angle. Expected unit is degree. Height and width have
+            to be same as those of toa_reflectance when using numpy.ndarray.
+
+    Returns:
+        numpy.ndarray: Surface reflectance with same shape as toa_reflectance
     """
     if _has_invalid_angle(
             angles=[
@@ -18,7 +40,7 @@ def srem(toa_reflectance: np.ndarray,
                 sensor_azimuth_angle_deg,
                 sensor_zenith_angle_deg],
             shape=toa_reflectance.shape):
-        raise ValueError('An angle have to be float or array that has same shape as toa_reflectance.')
+        raise ValueError('An angle have to be float or numpy.ndarray that has same shape as toa_reflectance.')
 
     solar_azimuth_angle = np.deg2rad(solar_azimuth_angle_deg)
     solar_zenith_angle = np.deg2rad(solar_zenith_angle_deg)
