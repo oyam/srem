@@ -1,13 +1,14 @@
 # SREM: A Simplified and Robust Surface Reflectance Estimation Method
 
 ![systematic_methodology](./img/systematic_methodology.png)
-SREM can be used for estimating surface reflectance of satellite imagery instead of other atmospheric correction algorithms. Core algorithm is based on "A Simplified and Robust Surface Reflectance Estimation Method (SREM) for Use over DiverseLand Surfaces Using Multi-Sensor Data" [[pdf](https://www.mdpi.com/2072-4292/11/11/1344/pdf)]. 
+SREM estimates surface reflectance of satellite imagery without integrating information of aerosol particles and
+atmospheric gasses. Core algorithm is based on "A Simplified and Robust Surface Reflectance Estimation Method (SREM) for Use over DiverseLand Surfaces Using Multi-Sensor Data" [[pdf](https://www.mdpi.com/2072-4292/11/11/1344/pdf)]. 
 
 
 ### Installation
-Python >= 3.6 is required.
+Python >= 3.5 is required.
 ```sh
-pip install git+https://github.com/oyam/srem
+pip install srem
 ```
 
 ### Usage
@@ -32,27 +33,6 @@ For detailed usage, please refer to examples of Landsat-8 and Sentinel-2.
 - [example/landsat8](https://github.com/oyam/srem/tree/master/examples/landsat8)
 - [example/sentinel2](https://github.com/oyam/srem/tree/master/examples/sentinel2)
 
-### Test
-Installation for test environment
-```sh
-git clone https://github.com/oyam/srem.git && cd srem
-pip install -e .\[test\]
-```
-
-Unit test
-```sh
-pytest tests
-```
-
-Lint
-```sh
-flake8 --config=.flake8
-```
-
-Type check
-```sh
-mypy --config-file mypy.ini ./srem/*.py
-```
 
 ### References
 - Bilal, Muhammad, et al. "A simplified and robust surface reflectance estimation method (srem) for use over diverse land surfaces using multi-sensor data." Remote Sensing 11.11 (2019): 1344.
