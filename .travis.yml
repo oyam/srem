@@ -1,0 +1,16 @@
+language: python
+
+python:
+  - "3.5"
+
+install:
+  - pip install .[test]
+
+jobs:
+  include:
+    - stage: lint
+      script: flake8 --config=.flake8
+    - stage: type check
+      script: mypy --config-file mypy.ini ./srem/*.py
+    - stage: unit test
+      script: pytest tests
