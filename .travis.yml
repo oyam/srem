@@ -1,11 +1,8 @@
 language: python
-
 python:
 - '3.5'
-
 install:
 - pip install .[test]
-
 jobs:
   include:
   - stage: lint
@@ -14,11 +11,10 @@ jobs:
     script: mypy ./srem/*.py
   - stage: unit test
     script: pytest tests
-
 deploy:
   provider: pypi
-  user: "__token__"
+  user: __token__
   password:
-    secure: h8c7g5j2gaU2wAMthKLM610M/oI7EwgnVeqa6lU7bJQtEujaoNJXO6q4Hgbovo01bpk7X4a0O5oeQkGpit5/st/G2Urhju+wYXNUyzsIJmGGBQVQ9N8yqKa4bpoAAdK1P5qoWRQ6VU1bmR4UjtHGHNtnkD/nk+pwx821gpDL2WHUzURDsLFtlG8tUcWqs77pOQia9EZY9KnwU0M+l7JFReBNgrp0VfzUboeDbGY4dzW7O2R6Hr5MDtG+hxTp6unxWtR1GpF03rtnLkQ7PmkiFLBTOvfNW7WSG3xUiMEe8mNDQofdBIJ1VDeSv5/JK4q3Qr6MS77dn1zVk0iw0WE85UKvOLINgYw44hRijH+c+PNEhCXeb+fH3+9CulVXD31SbwxvzgCqLKmplVDKhQrBMh1dVyFHAFrZ6nc3whZFw8J9Wa7ljyJQQLClNGJwcZDjXui3m3mYHMsP28t/Ell2IQAEgTOZHdIWTHeMH8PyghXNjT51Uqi2h11fEx0QDG7IJjagwg0jWEOUEUHbdmY2V9BYwOCRTUhbSi4tkSky9+KCYirNzvH9llv1AQGqKcikbhDv53jAIBF0X/BjiGVHgliZV3yzBW89UWgJ5DPx62haCJoiRKzCt6cQIIhGXD7u5uhhECvrjgyKrZ0lf0I3b0jWx4159/PDvSW/g0IalOA=
+    secure: WrkBSX/fo8j1/VbeKR19clKVdUR0UEAnYFVj91qO5PYF94D8vP4o1soXH7WrdIFpNFq7cIvUokTmDnRvjRG3vumwCzXI3+59hyH5r6t/78AXjzwqf7wU+fj2+s+eXOnRW0mz1IN52844AIeRIh9A6SuJoVU1Kx/O9Aria6CepA35LfqbGBDHl6XtGRRPhT28jDG1Z1k/wU9wcXFDSqZhE7wtGBoPF9NYhhV7qjz0Mx9BWg+e3ODhShXLVXJv2N2meDSQgxLzdd+vRj4yY1UgqN8yf/MsRtPwLqlgz+7PPi31ziyf5Bi+6FEe8yt9m4tExBZfI8owWzNJ/gIv1EweJpvhcnZ53bEkXtQrMgYIb/+dooMlCoLHP2n5mboE05KzKqJ+S1tVSJ6bNg8SVW5t/3PR/cf8LpcQUEBRGH2OEr0goDJBcinwwdDyGRhjwgWnNAqB53VDv92s6IJd4mJJ4UoN+u/SU1mP1Qb7X4iE0XeTDSHYCtdGXDA8MMGrUNW+Nfkpc21xp6Fx/Rt7nAbCl777uHmRacYSrq6JquQ1cQ5pGABlzotEdP6zy/qJjXBqKQMGwyy8toMou61NJxnAaZOrXWmRvy9xus5tVxKf5GcLz1Ef+OCgSk9/fd7DYPJU295wegAd5zWHV04P3qKxsBF41TNM9k/1iDHLx+4aCTM=
   on:
     tags: true
