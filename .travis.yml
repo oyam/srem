@@ -1,16 +1,24 @@
 language: python
 
 python:
-  - "3.5"
+- '3.5'
 
 install:
-  - pip install .[test]
+- pip install .[test]
 
 jobs:
   include:
-    - stage: lint
-      script: flake8 ./srem/*.py
-    - stage: type check
-      script: mypy ./srem/*.py
-    - stage: unit test
-      script: pytest tests
+  - stage: lint
+    script: flake8 ./srem/*.py
+  - stage: type check
+    script: mypy ./srem/*.py
+  - stage: unit test
+    script: pytest tests
+
+deploy:
+  provider: pypi
+  user: "__token__"
+  password:
+    secure: h8c7g5j2gaU2wAMthKLM610M/oI7EwgnVeqa6lU7bJQtEujaoNJXO6q4Hgbovo01bpk7X4a0O5oeQkGpit5/st/G2Urhju+wYXNUyzsIJmGGBQVQ9N8yqKa4bpoAAdK1P5qoWRQ6VU1bmR4UjtHGHNtnkD/nk+pwx821gpDL2WHUzURDsLFtlG8tUcWqs77pOQia9EZY9KnwU0M+l7JFReBNgrp0VfzUboeDbGY4dzW7O2R6Hr5MDtG+hxTp6unxWtR1GpF03rtnLkQ7PmkiFLBTOvfNW7WSG3xUiMEe8mNDQofdBIJ1VDeSv5/JK4q3Qr6MS77dn1zVk0iw0WE85UKvOLINgYw44hRijH+c+PNEhCXeb+fH3+9CulVXD31SbwxvzgCqLKmplVDKhQrBMh1dVyFHAFrZ6nc3whZFw8J9Wa7ljyJQQLClNGJwcZDjXui3m3mYHMsP28t/Ell2IQAEgTOZHdIWTHeMH8PyghXNjT51Uqi2h11fEx0QDG7IJjagwg0jWEOUEUHbdmY2V9BYwOCRTUhbSi4tkSky9+KCYirNzvH9llv1AQGqKcikbhDv53jAIBF0X/BjiGVHgliZV3yzBW89UWgJ5DPx62haCJoiRKzCt6cQIIhGXD7u5uhhECvrjgyKrZ0lf0I3b0jWx4159/PDvSW/g0IalOA=
+  on:
+    tags: true
