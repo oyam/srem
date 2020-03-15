@@ -8,6 +8,6 @@ long_description = '\n'.join([str(line) for line in readme.split('\n')[3:]])
 
 setuptools.setup(
     long_description=long_description,
-    long_description_content_type='text/markdown'
+    long_description_content_type='text/markdown',
     use_scm_version=True,
 )
