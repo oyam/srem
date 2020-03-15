@@ -9,7 +9,7 @@ install:
 jobs:
   include:
     - stage: lint
-      script: flake8 --config=.flake8
+      script: flake8 --config=.flake8 ./srem/*.py
     - stage: type check
       script: mypy --config-file mypy.ini ./srem/*.py
     - stage: unit test
