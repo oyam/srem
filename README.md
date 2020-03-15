@@ -8,7 +8,7 @@ atmospheric gasses. Core algorithm is based on "A Simplified and Robust Surface 
 ### Installation
 Python >= 3.5 is required.
 ```sh
-pip install git+https://github.com/oyam/srem
+pip install srem
 ```
 
 ### Usage
