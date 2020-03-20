@@ -31,7 +31,7 @@ def apply_srem(input_raster_file: str,
             dst_dtype='float32',
             processes=1,
             pixel_sunangle=True,
-            clip=False)
+            clip=True)
         solar_angle_file, sensor_angle_file = \
             utils.get_pixel_angle_files(angle_file, band_id, tmp_dir)
 
