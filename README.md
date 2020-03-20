@@ -4,7 +4,7 @@
 
 [![pypi](https://img.shields.io/pypi/v/srem.svg)](https://pypi.python.org/pypi/srem)
 [![Python Versions](https://img.shields.io/pypi/pyversions/srem.svg)](https://pypi.org/project/srem/)
-[![GitHub license](https://img.shields.io/github/license/oyam/srem.svg)](https://github.com/chainer/chainer)
+[![GitHub license](https://img.shields.io/github/license/oyam/srem.svg)](https://github.com/oyam/srem)
 ![CI](https://github.com/oyam/srem/workflows/CI/badge.svg)
 
 SREM estimates surface reflectance of satellite imagery without integrating information of aerosol particles and
