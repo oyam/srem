@@ -5,8 +5,7 @@
 [![pypi](https://img.shields.io/pypi/v/srem.svg)](https://pypi.python.org/pypi/srem)
 [![Python Versions](https://img.shields.io/pypi/pyversions/srem.svg)](https://pypi.org/project/srem/)
 [![GitHub license](https://img.shields.io/github/license/oyam/srem.svg)](https://github.com/chainer/chainer)
-[![Actions Status](https://github.com/oyam/srem/workflows/ci/badge.svg)](https://github.com/oyam/srem/actions)
-
+![CI](https://github.com/oyam/srem/workflows/CI/badge.svg)
 
 SREM estimates surface reflectance of satellite imagery without integrating information of aerosol particles and
 atmospheric gasses. Core algorithm is based on "A Simplified and Robust Surface Reflectance Estimation Method (SREM) for Use over DiverseLand Surfaces Using Multi-Sensor Data" [[pdf](https://www.mdpi.com/2072-4292/11/11/1344/pdf)]. 
@@ -25,7 +24,7 @@ from srem import srem
 
 surface_reflectance = srem(
     toa_reflectance, # np.ndarray with shape of (height, width)
-    wavelength, # float micrometer
+    wavelength, # float in micrometer
     solar_azimuth_angle_deg, # float or np.ndarray with shape of (height, width)
     solar_zenith_angle_deg, # float or np.ndarray with shape of (height, width)
     sensor_azimuth_angle_deg, # float or np.ndarray with shape of (height, width)
