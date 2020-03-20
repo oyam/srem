@@ -1,4 +1,4 @@
 numpy>=1.7
 rasterio==1.1.2
+srem==1.0.0
 tqdm==4.41.1
-git+https://github.com/oyam/srem
