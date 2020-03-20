@@ -24,7 +24,7 @@ from srem import srem
 
 surface_reflectance = srem(
     toa_reflectance, # np.ndarray with shape of (height, width)
-    wavelength, # float micrometer
+    wavelength, # float in micrometer
     solar_azimuth_angle_deg, # float or np.ndarray with shape of (height, width)
     solar_zenith_angle_deg, # float or np.ndarray with shape of (height, width)
     sensor_azimuth_angle_deg, # float or np.ndarray with shape of (height, width)
