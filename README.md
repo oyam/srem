@@ -1,12 +1,19 @@
 # SREM: A Simplified and Robust Surface Reflectance Estimation Method
 
-![systematic_methodology](./img/systematic_methodology.png)
+![systematic_methodology](./img/systematic_methodology.png)  
+
+[![pypi](https://img.shields.io/pypi/v/srem.svg)](https://pypi.python.org/pypi/srem)
+[![Python Versions](https://img.shields.io/pypi/pyversions/srem.svg)](https://pypi.org/project/srem/)
+[![GitHub license](https://img.shields.io/github/license/oyam/srem.svg)](https://github.com/chainer/chainer)
+[![Actions Status](https://github.com/oyam/srem/workflows/ci/badge.svg)](https://github.com/oyam/srem/actions)
+
+
 SREM estimates surface reflectance of satellite imagery without integrating information of aerosol particles and
 atmospheric gasses. Core algorithm is based on "A Simplified and Robust Surface Reflectance Estimation Method (SREM) for Use over DiverseLand Surfaces Using Multi-Sensor Data" [[pdf](https://www.mdpi.com/2072-4292/11/11/1344/pdf)]. 
 
 
 ### Installation
-Python >= 3.5 is required.
+This library supports Python >= 3.6
 ```sh
 pip install srem
 ```
