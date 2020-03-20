@@ -47,13 +47,20 @@ def srem(toa_reflectance: np.ndarray,
     sensor_azimuth_angle = np.deg2rad(sensor_azimuth_angle_deg)
     sensor_zenith_angle = np.deg2rad(sensor_zenith_angle_deg)
 
-    rayleigh_optical_depth = _calc_rayleigh_optical_depth(wavelength)
+    rayleigh_optical_depth = _calc_rayleigh_optical_depth(
+        wavelength=wavelength)
     rayleigh_reflectance = _calc_rayleigh_reflectance(
-        wavelength, solar_azimuth_angle, solar_zenith_angle,
-        sensor_azimuth_angle, sensor_zenith_angle, rayleigh_optical_depth)
-    satm = _calc_satm(rayleigh_optical_depth)
+        wavelength=wavelength,
+        solar_azimuth_angle=solar_azimuth_angle,
+        solar_zenith_angle=solar_zenith_angle,
+        sensor_azimuth_angle=sensor_azimuth_angle,
+        sensor_zenith_angle=sensor_zenith_angle,
+        rayleigh_optical_depth=rayleigh_optical_depth)
+    satm = _calc_satm(rayleigh_optical_depth=rayleigh_optical_depth)
     total_transmittance = _calc_total_transmittance(
-        solar_zenith_angle, sensor_zenith_angle, rayleigh_optical_depth)
+        solar_zenith_angle=solar_zenith_angle,
+        sensor_zenith_angle=sensor_zenith_angle,
+        rayleigh_optical_depth=rayleigh_optical_depth)
     surface_reflectance = \
         (toa_reflectance - rayleigh_reflectance) \
         / ((toa_reflectance - rayleigh_reflectance) * satm + total_transmittance)
@@ -83,7 +90,10 @@ def _calc_rayleigh_reflectance(wavelength: float,
                                sensor_zenith_angle: Union[float, np.ndarray],
                                rayleigh_optical_depth: float) -> Union[float, np.ndarray]:
     rayleigh_phase = _calc_rayleigh_phase(
-        solar_azimuth_angle, solar_zenith_angle, sensor_azimuth_angle, sensor_zenith_angle)
+        solar_azimuth_angle=solar_azimuth_angle,
+        solar_zenith_angle=solar_zenith_angle,
+        sensor_azimuth_angle=sensor_azimuth_angle,
+        sensor_zenith_angle=sensor_zenith_angle)
     us = np.cos(solar_zenith_angle)
     uv = np.cos(sensor_zenith_angle)
     air_mass = 1 / us + 1 / uv
@@ -100,8 +110,11 @@ def _calc_rayleigh_phase(solar_azimuth_angle: Union[float, np.ndarray],
     coef_a = 0.9587256
     coef_b = 1 - coef_a
     scattering_angle = _calc_scattering_angle(
-        solar_azimuth_angle, solar_zenith_angle, sensor_azimuth_angle, sensor_zenith_angle)
-    rayleigh_phase = 3 * coef_a * (1 + np.cos(scattering_angle)) / (4 + coef_b)
+        solar_azimuth_angle=solar_azimuth_angle,
+        solar_zenith_angle=solar_zenith_angle,
+        sensor_azimuth_angle=sensor_azimuth_angle,
+        sensor_zenith_angle=sensor_zenith_angle)
+    rayleigh_phase = 3 * coef_a * (1 + np.cos(scattering_angle) ** 2) / (4 + coef_b)
     return rayleigh_phase
 
 
@@ -109,7 +122,9 @@ def _calc_scattering_angle(solar_azimuth_angle: Union[float, np.ndarray],
                            solar_zenith_angle: Union[float, np.ndarray],
                            sensor_azimuth_angle: Union[float, np.ndarray],
                            sensor_zenith_angle: Union[float, np.ndarray]) -> Union[float, np.ndarray]:
-    relative_azimuth_angle = _calc_relative_azimuth_angle(solar_azimuth_angle, sensor_azimuth_angle)
+    relative_azimuth_angle = _calc_relative_azimuth_angle(
+        angle_1=solar_azimuth_angle,
+        angle_2=sensor_azimuth_angle)
     scattering_angle = np.arccos(
         -1 * np.cos(sensor_zenith_angle) * np.cos(solar_zenith_angle)
         + np.sin(sensor_zenith_angle) * np.sin(solar_zenith_angle) * np.cos(relative_azimuth_angle))
