@@ -1,6 +1,9 @@
 name: Publish Python distributions to PyPI
 
-on: [push, pull_request]
+on:
+  create:
+    tags:
+      - v*
 
 jobs:
   release:
